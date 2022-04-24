@@ -1,5 +1,6 @@
 import './App.css'
 import Calendar, { DateCallback } from 'react-calendar';
+import './react-calendar/dist/Calendar.css';
 import { MouseEvent } from 'react';
 import { useState } from 'react';
 
