@@ -39,6 +39,12 @@ function App() {
     console.log(scheduleText)
   }
 
+  // const datesToAddContentTo = [tomorrow, in3Days, in5Days];
+
+  const tileContent = ({ activeStartDate, date, view }: {activeStartDate: any; date: any; view: any;}) => {
+    return view === 'month' && date.getDay() === 0 ? <p>It's Sunday!</p> : null
+  }
+  
   return (
     <>
       <div className="title">
@@ -47,7 +53,11 @@ function App() {
         </header>
       </div>
       <div className='calendar-grid'>
-        <Calendar onClickDay={onClickCalendarCell} value={value}/>
+        <Calendar 
+          onClickDay={onClickCalendarCell} 
+          value={value}
+          tileContent={tileContent}
+        />
       </div>
       <div className='input-schedule-form'>
         <FormControl>
