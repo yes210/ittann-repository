@@ -42,7 +42,15 @@ function App() {
   // const datesToAddContentTo = [tomorrow, in3Days, in5Days];
 
   const tileContent = ({ activeStartDate, date, view }: {activeStartDate: any; date: any; view: any;}) => {
-    return view === 'month' && date.getDay() === 0 ? <p>It's Sunday!</p> : null
+    if(view === 'month' && date.getDay() === 0){
+      return (
+        <>
+          <p>It's Sunday!</p>
+          <p>dddddddddddddddddddddddddddd</p>      
+        </>
+      )
+    }
+    return null
   }
   
   return (
